@@ -18,9 +18,10 @@
             <ul class="list-unstyled px-2">
                 <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-house"></i>Dashboard</a></li>
                 <li class=""><a href="index.php" class="text-decoration-none px-3 py-2 d-block">Customers</a></li>
-                <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block">Projects</a></li>
+                <li class=""><a href="service/service.php" class="text-decoration-none px-3 py-2 d-block">Services</a></li>
+                <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block">Developers</a></li>
                 <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block">Dev teams</a></li>
-                <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block"></a></li>
+                
             </ul>
             <hr class="h-color mx-2">
             <ul class="list-unstyled">
@@ -31,7 +32,7 @@
         <div class="content">
     <div class="container my-5" >
         <h2>List of developement teams</h2>
-        <a class="btn btn-primary" href="./create.php" role="button">New client</a>
+        <a class="btn btn-primary" href="./create.php" role="button">Add developer </a>
         <br>
         <table class="table">
             <thead>

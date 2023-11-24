@@ -44,3 +44,18 @@ SELECT developers_teams.id, developers.name, developers.email, developers.phone,
         FROM developers_teams 
         JOIN developers
         ON developers.team_id=developers_teams.id
+
+
+UPDATE developers
+SET team_id=2
+WHERE id=2;
+
+CREATE TABLE services(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	libel VARCHAR(50) NOT NULL,
+	category VARCHAR(50),
+	price FLOAT
+);
+
+INSERT INTO services (libel,category,price)
+VALUES ('Website creation','Front-end','3000');

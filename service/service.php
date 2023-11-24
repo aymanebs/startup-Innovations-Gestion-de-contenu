@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/b93ca603ed.js" crossorigin="anonymous"></script>
 </head>
@@ -18,8 +18,8 @@
             <ul class="list-unstyled px-2">
                 <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-house"></i>Dashboard</a></li>
                 <li class=""><a href="index.php" class="text-decoration-none px-3 py-2 d-block">Customers</a></li>
-                <li class=""><a href="service/service.php" class="text-decoration-none px-3 py-2 d-block">Services</a></li>
-                <li class=""><a href="teams/team.php" class="text-decoration-none px-3 py-2 d-block">Dev teams</a></li>
+                <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block">Services</a></li>
+                <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block">Dev teams</a></li>
                 <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block"></a></li>
             </ul>
             <hr class="h-color mx-2">
@@ -30,25 +30,24 @@
         </div>
         <div class="content">
     <div class="container my-5" >
-        <h2>List of clients</h2>
-        <a class="btn btn-primary" href="./create.php" role="button">New client</a>
+        <h2>List of developement teams</h2>
+        <a class="btn btn-primary" href="./create.php" role="button">Add developer </a>
         <br>
         <table class="table">
             <thead>
                 <tr>
                     <th>id</th>
-                    <th>name</th>
-                    <th>email</th>
-                    <th>phone</th>
-                    <th>adress</th>
-                    <th>created_at</th>
-                    <th>action</th>
+                    
+                    <th>libel</th>
+                    <th>category</th>
+                    <th>price</th>
+                   
                 </tr>
             </thead>
             <tbody>
             <?php 
-            require 'connection.php';
-            $requete="SELECT *  FROM utilisateurs ";
+            require '../connection.php';
+            $requete="SELECT *  FROM services";
             $query=mysqli_query($connection,$requete);
             // read data of each row
             while($row = mysqli_fetch_assoc($query)){
@@ -58,11 +57,12 @@
                 echo"
                 <tr>
                 <td>$row[id]</td>
-                <td>$row[name]</td>
-                <td>$row[email]</td>
-                <td>$row[phone]</td>
-                <td>$row[adress]</td>
-                <td>$row[created_at]</td>
+                
+                <td>$row[libel]</td>
+                <td>$row[category]</td>
+                <td>$row[price]</td>
+                <td>$row[sex]</td>
+              
                 <td>
                     <a class='btn btn-primary btn-sm' href='$editUrl'>Edit</a>
                     <a class='btn btn-danger btn-sm' href='$deletUrl'>Delet</a>
@@ -72,8 +72,7 @@
             }
             ?>
             
-           
-            </tbody>
+           </tbody>
         </table>
     </div>
         </div>
