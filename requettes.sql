@@ -59,3 +59,11 @@ CREATE TABLE services(
 
 INSERT INTO services (libel,category,price)
 VALUES ('Website creation','Front-end','3000');
+
+CREATE TABLE Service Purchased(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	delivery_date DATETIME DEFAULT CURRENT_TIMESTAMP
+
+
+
+);

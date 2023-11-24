@@ -17,7 +17,7 @@
             </div>
             <ul class="list-unstyled px-2">
                 <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-house"></i>Dashboard</a></li>
-                <li class=""><a href="index.php" class="text-decoration-none px-3 py-2 d-block">Customers</a></li>
+                <li class=""><a href="../index.php" class="text-decoration-none px-3 py-2 d-block">Customers</a></li>
                 <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block">Services</a></li>
                 <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block">Dev teams</a></li>
                 <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block"></a></li>
@@ -30,8 +30,8 @@
         </div>
         <div class="content">
     <div class="container my-5" >
-        <h2>List of developement teams</h2>
-        <a class="btn btn-primary" href="./create.php" role="button">Add developer </a>
+        <h2>List of services</h2>
+        <a class="btn btn-primary" href="./create.php" role="button">Add service </a>
         <br>
         <table class="table">
             <thead>
@@ -41,6 +41,7 @@
                     <th>libel</th>
                     <th>category</th>
                     <th>price</th>
+                    <th>action</th>
                    
                 </tr>
             </thead>
@@ -61,7 +62,7 @@
                 <td>$row[libel]</td>
                 <td>$row[category]</td>
                 <td>$row[price]</td>
-                <td>$row[sex]</td>
+               
               
                 <td>
                     <a class='btn btn-primary btn-sm' href='$editUrl'>Edit</a>
