@@ -3,21 +3,23 @@
 <?php 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $libel = "";
-$category = "";
+$category= "";
 $price = "";
+$team_id="";
+$client_id = "";
 
-
- $libel  = $_POST['libel'];
- $category  = $_POST['category'];
+ $libel = $_POST['libel'];
+ $category = $_POST['category'];
  $price = $_POST['price'];
-
+ $team_id = $_POST['team_id'];
+ $client_id=$_POST['client_id'];
 
  require '..\connection.php';
- $requete = "INSERT INTO services(libel,category,price)" . 
- "VALUES('$libel','$category',$price)";
+ $requete = "INSERT INTO services (libel,category,price,team_id,client_id)" .
+ "VALUES('$libel','$category','$price','$team_id','$client_id')";
 $query=mysqli_query($connection,$requete);
 if(isset($query)){
-    echo"insere avec succes";
+    echo"developeur insere avec succes";
 }
 else{
     echo"erreur d insertion";
@@ -52,7 +54,7 @@ else{
         <h2>Add</h2>
         <form method="POST" >
             <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Libel</label>
+                <label class="col-sm-3 col-form-label">Label</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="libel"  $value="<?php echo $libel; ?>">
                 </div>
@@ -66,10 +68,19 @@ else{
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Price</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="price" $value="<?php echo $rice; ?>">
+                    <input type="text" class="form-control" name="price" $value="<?php echo $price; ?>">
                 </div>
             </div>
-          
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Team</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="team_id" $value="<?php echo $team_id; ?>">
+                </div>
+                <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Client_id</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="client_id" $value="<?php echo $client_id; ?>">
+                </div>
 
                 <div class="row mb-3">
                     <div class="col-sm-3 d-grid">

@@ -18,8 +18,8 @@
             <ul class="list-unstyled px-2">
                 <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-house"></i>Dashboard</a></li>
                 <li class=""><a href="../index.php" class="text-decoration-none px-3 py-2 d-block">Customers</a></li>
-                <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block">Services</a></li>
-                <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block">Dev teams</a></li>
+                <li class=""><a href="teams/team.php" class="text-decoration-none px-3 py-2 d-block">Dev teams</a></li>
+                <li class=""><a href="services_provided/provided.php" class="text-decoration-none px-3 py-2 d-block">Services</a></li>
                 <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block"></a></li>
             </ul>
             <hr class="h-color mx-2">
@@ -55,14 +55,14 @@
             require '../connection.php';
             $requete="SELECT services.id,services.libel,services.category,services.price,services.TEAM_ID,services.CLIENT_ID,services.delivery_date,utilisateurs.name,utilisateurs.company_name 
             FROM services
-            JOIN utilisateurs
+             JOIN utilisateurs
             ON utilisateurs.id=services.CLIENT_ID";
             $query=mysqli_query($connection,$requete);
             // read data of each row
             while($row = mysqli_fetch_assoc($query)){
                
                 $editUrl="edit.php?id=$row[id]";
-                $deletUrl="delet.php?id=$row[id]";
+                $deletUrl="delete.php?id=$row[id]";
                 echo"
                 <tr>
                 <td>$row[id]</td>
@@ -70,9 +70,10 @@
                 <td>$row[libel]</td>
                 <td>$row[category]</td>
                 <td>$row[price]</td>
+                <td>$row[delivery_date]</td>
                 <td>$row[TEAM_ID]</td>
                 <td>$row[CLIENT_ID]</td>
-                <td>$row[delivery_date]</td>
+              
                 <td>$row[name]</td>
                 <td>$row[company_name]</td>
               
