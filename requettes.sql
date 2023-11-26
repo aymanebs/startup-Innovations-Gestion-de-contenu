@@ -22,6 +22,7 @@ CREATE TABLE developers(
 	email VARCHAR(20),
 	phone VARCHAR(20),
 	sex VARCHAR(3)
+	team_id
 
 );
 ALTER TABLE developers
@@ -67,3 +68,12 @@ CREATE TABLE Service Purchased(
 
 
 );
+ALTER TABLE services
+ADD
+COLUMN TEAM_ID INT,
+ADD
+FOREIGN KEY(TEAM_ID) REFERENCES developers_team(id) ON DELETE CASCADE
+;
+UPDATE services
+SET CLIENT_ID=1
+where id=1;

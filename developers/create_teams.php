@@ -2,22 +2,18 @@
 
 <?php 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-$name = "";
-$email = "";
-$phone = "";
-$sex = "";
+$leader_id = "";
 
- $name = $_POST['name'];
- $email = $_POST['email'];
- $phone = $_POST['phone'];
- $sex = $_POST['sex'];
+
+ $leader_id = $_POST['leader_id'];
+ 
 
  require '..\connection.php';
- $requete = "INSERT INTO developers (name,email,phone,sex)" .
- "VALUES('$name','$email','$phone','$sex')";
+ $requete = "INSERT INTO developers_teams (leader_id)" .
+ "VALUES($leader_id)";
 $query=mysqli_query($connection,$requete);
 if(isset($query)){
-    echo"developeur insere avec succes";
+    echo"insere avec succes";
 }
 else{
     echo"erreur d insertion";
@@ -52,28 +48,13 @@ else{
         <h2>Add</h2>
         <form method="POST" >
             <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Name</label>
+                <label class="col-sm-3 col-form-label">leader_id</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="name"  $value="<?php echo $name; ?>">
+                    <input type="text" class="form-control" name="leader_id"  $value="<?php echo $leader_id; ?>">
                 </div>
             </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Email</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="email" $value="<?php echo $email; ?>">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Phone</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="phone" $value="<?php echo $phone; ?>">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Sex</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="sex" $value="<?php echo $sex; ?>">
-                </div>
+           
+     
 
                 <div class="row mb-3">
                     <div class="col-sm-3 d-grid">
