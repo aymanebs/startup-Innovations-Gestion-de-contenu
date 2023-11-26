@@ -143,12 +143,12 @@ $query = mysqli_query($connection, $requete);
 
                 ?>
 
-                <div class="row mb-3">
+                <div class="row mb-3 p-3">
                     <div class="col-sm-3 d-grid">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                     <div class="col-sm-3 d-grid">
-                        <a class="btn btn-outline-primary" href="index.php" role="button">Cancel</a>
+                        <a class="btn btn-outline-primary" href="provided.php" role="button">Cancel</a>
                     </div>
                 </div>
             </div>

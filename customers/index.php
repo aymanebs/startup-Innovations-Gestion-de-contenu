@@ -4,35 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/b93ca603ed.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="main-container d-flex">
         <div class="sidebar" id="side_nav">
-            <div class="header-box px-3 pt-3 pb-4">
+            <div class="header-box px-3 pt-3 pb-5">
                 <h1 class="fs-4"><span class="bg-white text-dark rounded shadow px-2 me-2">YI</span><span class="text-white">Yourinterface</span></h1>
                 <button class="btn d-md-none d-block close-btn px-1 py-0 text white"><i class="fa-solid fa-bars-staggered"></i></button>
             </div>
-            <ul class="list-unstyled px-2">
-                <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-house"></i>Dashboard</a></li>
-                <li class=""><a href="index.php" class="text-decoration-none px-3 py-2 d-block">Customers</a></li>
-                <li class=""><a href="teams/team.php" class="text-decoration-none px-3 py-2 d-block">Dev teams</a></li>
-                <li class=""><a href="services_provided/provided.php" class="text-decoration-none px-3 py-2 d-block">Services</a></li>
-                <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block"></a></li>
+            <ul class="list-unstyled px-2 p-3">
+                <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block "><i class="fa-solid fa-house"></i>   Dashboard</a></li>
+                <li class=""><a href="index.php" class="text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-user"></i>   Customers</a></li>
+                <li class=""><a href="../developers/developers.php" class="text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-people-group"></i>  Dev teams</a></li>
+                <li class=""><a href="../services_provided/provided.php" class="text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-wrench"></i>   Services</a></li>
+                
             </ul>
             <hr class="h-color mx-2">
-            <ul class="list-unstyled">
-            <li><a href="#" class="text-decoration-none"><i class="fa-solid fa-house"></i>Settings</a><</li>
-            <li><a href="#" class="text-decoration-none"><i class="fa-solid fa-house"></i>Settings</a><</li>
-            </ul>
+          
         </div>
         <div class="content">
-    <div class="container my-5" >
+    <div class="container my-5 " >
         <h2>List of clients</h2>
-        <a class="btn btn-primary" href="./create.php" role="button">New client</a>
         <br>
+        <a class="btn btn-success" href="./create.php" role="button">New client</a>
+        <br><br>
         <table class="table">
             <thead>
                 <tr>
@@ -47,7 +45,7 @@
             </thead>
             <tbody>
             <?php 
-            require 'connection.php';
+            require '../connection.php';
             $requete="SELECT *  FROM utilisateurs ";
             $query=mysqli_query($connection,$requete);
             // read data of each row

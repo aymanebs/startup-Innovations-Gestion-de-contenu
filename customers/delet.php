@@ -1,6 +1,6 @@
 <?php
 
-require 'connection.php';
+require '../connection.php';
 $id=$_GET['id'];
 $requete="DELETE FROM utilisateurs WHERE id=$id";
 $query=mysqli_query($connection,$requete);

@@ -1,7 +1,7 @@
 <?php 
 
     // Affichage des informations dans les input formulaire
-    require 'connection.php';
+    require '../connection.php';
     if(isset($_GET["id"])){
     $id=$_GET['id'];
     $requete="SELECT *  FROM utilisateurs WHERE id='$id' ";
@@ -107,7 +107,7 @@
 
                 ?>
 
-                <div class="row mb-3">
+                <div class="row mb-3 p-3">
                     <div class="col-sm-3 d-grid">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>

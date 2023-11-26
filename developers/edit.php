@@ -32,7 +32,7 @@
     $query=mysqli_query($connection,$requete);
 
 
- header("location:index.php");
+ header("location:developers.php");
 
 }
 ?>
@@ -93,7 +93,7 @@
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="sex" value="<?php echo $sex; ?>">
                 </div>
-                <div class="row mb-3">
+                <div class="row mb-3 p-3">
                 <label class="col-sm-3 col-form-label">Team_id</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="team_id" value="<?php echo $team_id; ?>">
@@ -116,12 +116,12 @@
 
                 ?>
 
-                <div class="row mb-3">
+                <div class="row mb-3 p-3">
                     <div class="col-sm-3 d-grid">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                     <div class="col-sm-3 d-grid">
-                        <a class="btn btn-outline-primary" href="index.php" role="button">Cancel</a>
+                        <a class="btn btn-outline-primary" href="developers.php" role="button">Cancel</a>
                     </div>
                 </div>
             </div>

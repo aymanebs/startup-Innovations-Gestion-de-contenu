@@ -10,7 +10,7 @@ $adress = "";
  $phone = $_POST['phone'];
  $adress = $_POST['adress'];
 
- require 'connection.php';
+ require '../connection.php';
  $requete = "INSERT INTO utilisateurs (name,email,phone,adress)" .
  "VALUES('$name','$email','$phone','$adress')";
 $query=mysqli_query($connection,$requete);
@@ -69,8 +69,8 @@ else{
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="adress" $value="<?php echo $adress; ?>">
                 </div>
-
-                <div class="row mb-3">
+                
+                <div class="row mb-3 p-3">
                     <div class="col-sm-3 d-grid">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>

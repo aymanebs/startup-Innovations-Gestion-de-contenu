@@ -56,12 +56,12 @@ else{
            
      
 
-                <div class="row mb-3">
+                <div class="row mb-3 p-3">
                     <div class="col-sm-3 d-grid">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                     <div class="col-sm-3 d-grid">
-                        <a class="btn btn-outline-primary" href="/brief2/index.php" role="button">Cancel</a>
+                        <a class="btn btn-outline-primary" href="/brief2/developers.php" role="button">Cancel</a>
                     </div>
                 </div>
             </div>
