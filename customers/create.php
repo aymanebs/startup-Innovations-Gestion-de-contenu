@@ -6,26 +6,24 @@ $phone = "";
 $adress = "";
 
  $name = $_POST['name'];
+ $name = $_POST['company_name'];
  $email = $_POST['email'];
  $phone = $_POST['phone'];
  $adress = $_POST['adress'];
 
  require '../connection.php';
- $requete = "INSERT INTO utilisateurs (name,email,phone,adress)" .
- "VALUES('$name','$email','$phone','$adress')";
+ $requete = "INSERT INTO utilisateurs (name,company_name,email,phone,adress)" .
+ "VALUES('$name','$company_name','$email','$phone','$adress')";
 $query=mysqli_query($connection,$requete);
 if(isset($query)){
     echo"utilisateur insere avec succes";
+    header("location:index.php");
 }
 else{
     echo"erreur d insertion";
 }
 
-} else {
-    echo "Form not submitted.";
 }
-
-
 
 
 
@@ -53,6 +51,12 @@ else{
                 </div>
             </div>
             <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Company Name</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="company_name"  $value="<?php echo $company_name; ?>">
+                </div>
+            </div>
+            <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Email</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="email" $value="<?php echo $email; ?>">
@@ -75,7 +79,7 @@ else{
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                     <div class="col-sm-3 d-grid">
-                        <a class="btn btn-outline-primary" href="/brief2/index.php" role="button">Cancel</a>
+                        <a class="btn btn-outline-primary" href="index.php" role="button">Cancel</a>
                     </div>
                 </div>
             </div>

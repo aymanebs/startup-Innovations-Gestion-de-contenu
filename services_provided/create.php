@@ -20,6 +20,7 @@ $client_id = "";
 $query=mysqli_query($connection,$requete);
 if(isset($query)){
     echo"developeur insere avec succes";
+    header("location:provided.php");
 }
 else{
     echo"erreur d insertion";

@@ -26,7 +26,7 @@
     $team_id = $_POST["team_id"];
    
 
-    $requete ="UPDATE utilisateurs 
+    $requete ="UPDATE developers
         SET name='$name',email='$email',phone='$phone',sex='$sex',team_id=$team_id
         WHERE id='$id'";
     $query=mysqli_query($connection,$requete);

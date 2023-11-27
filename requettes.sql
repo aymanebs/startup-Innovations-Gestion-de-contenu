@@ -6,6 +6,27 @@ CREATE TABLE utilisateurs(
 	adress VARCHAR(50),
 	created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+CREATE TABLE developers(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(50) NOT NULL,
+	email VARCHAR(20),
+	phone VARCHAR(20),
+	sex VARCHAR(3)
+	team_id
+
+);
+CREATE TABLE services(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	libel VARCHAR(50) NOT NULL,
+	category VARCHAR(50),
+	price FLOAT
+);
+CREATE TABLE developers_teams(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	leader_id INT  NOT NULL,
+	FOREIGN KEY(leader_id) REFERENCES developers(id) ON DELETE CASCADE
+
+);
 
 INSERT INTO utilisateurs (name,email,phone,adress)
 VALUES
@@ -16,25 +37,12 @@ VALUES
 ('Nitou','nitou@gmail.com','068768945','Taza');
 
 
-CREATE TABLE developers(
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	name VARCHAR(50) NOT NULL,
-	email VARCHAR(20),
-	phone VARCHAR(20),
-	sex VARCHAR(3)
-	team_id
 
-);
 ALTER TABLE developers
 ADD COLUMN team_id INT,
 ADD FOREIGN KEY(team_id ) REFERENCES developers_teams(id) ON DELETE CASCADE ;
 
-CREATE TABLE developers_teams(
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	leader_id INT  NOT NULL,
-	FOREIGN KEY(leader_id) REFERENCES developers(id) ON DELETE CASCADE
 
-);
 INSERT INTO developers (name,email,phone,sex)
 VALUES ('Zair Amine','Zair@gmail.com','0612768145','M');
 
@@ -51,23 +59,12 @@ UPDATE developers
 SET team_id=2
 WHERE id=2;
 
-CREATE TABLE services(
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	libel VARCHAR(50) NOT NULL,
-	category VARCHAR(50),
-	price FLOAT
-);
+
 
 INSERT INTO services (libel,category,price)
 VALUES ('Website creation','Front-end','3000');
 
-CREATE TABLE Service Purchased(
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	delivery_date DATETIME DEFAULT CURRENT_TIMESTAMP
 
-
-
-);
 ALTER TABLE services
 ADD
 COLUMN TEAM_ID INT,

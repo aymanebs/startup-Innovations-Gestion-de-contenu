@@ -36,6 +36,7 @@
                 <tr>
                     <th>id</th>
                     <th>name</th>
+                    <th>company_name</th>
                     <th>email</th>
                     <th>phone</th>
                     <th>adress</th>
@@ -57,13 +58,14 @@
                 <tr>
                 <td>$row[id]</td>
                 <td>$row[name]</td>
+                <td>$row[company_name]</td>
                 <td>$row[email]</td>
                 <td>$row[phone]</td>
                 <td>$row[adress]</td>
                 <td>$row[created_at]</td>
                 <td>
                     <a class='btn btn-primary btn-sm' href='$editUrl'>Edit</a>
-                    <a class='btn btn-danger btn-sm' href='$deletUrl'>Delet</a>
+                    <a class='btn btn-danger btn-sm' href='$deletUrl'>Delete</a>
                 </td>
             </tr>
             ";
@@ -82,11 +84,6 @@
 
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <!-- <script>
-        $(".sidebar ul li").on('click', function(){
-            $(".sidebar ul li.active").removeclass('active');
-            $(this).addClass('active');
-        })
-    </script> -->
+
 </body>
 </html>

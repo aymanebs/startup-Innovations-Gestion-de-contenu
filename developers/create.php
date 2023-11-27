@@ -19,7 +19,8 @@ $team_id="";
  "VALUES('$name','$email','$phone','$sex','$team_id')";
 $query=mysqli_query($connection,$requete);
 if(isset($query)){
-    echo"developeur insere avec succes";
+    echo"insere avec succes";
+    header("location:developers.php");
 }
 else{
     echo"erreur d insertion";
@@ -88,7 +89,7 @@ else{
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                     <div class="col-sm-3 d-grid">
-                        <a class="btn btn-outline-primary" href="/brief2/developers.php" role="button">Cancel</a>
+                        <a class="btn btn-outline-primary" href="developers.php" role="button">Cancel</a>
                     </div>
                 </div>
             </div>

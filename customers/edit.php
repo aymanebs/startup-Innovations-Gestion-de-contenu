@@ -8,6 +8,7 @@
     $query=mysqli_query($connection,$requete);
     $row=mysqli_fetch_assoc($query);
     $name = $row["name"];
+    $company_name = $row["company_name"];
     $email = $row["email"];
     $phone = $row["phone"];
     $adress = $row["adress"];
@@ -18,17 +19,18 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
      $id= $_POST["id"];
     $name = $_POST["name"];
+    $company_name = $_POST["company_name"];
     $email = $_POST["email"];
     $phone = $_POST["phone"];
     $adress = $_POST["adress"];
 
     $requete ="UPDATE utilisateurs 
-        SET name='$name',email='$email',phone='$phone',adress='$adress'  
+        SET name='$name',company_name='$company_name',email='$email',phone='$phone',adress='$adress'  
         WHERE id='$id'";
     $query=mysqli_query($connection,$requete);
 
 
- header("location:index.php");
+    header("location:index.php");
 
 }
 ?>
@@ -70,6 +72,12 @@
                 <label class="col-sm-3 col-form-label">Name</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="name" value="<?php echo $name; ?>">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Company Name</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="company_name" value="<?php echo $company_name; ?>">
                 </div>
             </div>
             <div class="row mb-3">
